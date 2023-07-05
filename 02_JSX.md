@@ -71,6 +71,7 @@ function App() {
 ```
 
 - JSX 내부에서 {} 내부에 자바스크립트 표현식을 사용할 수 있음
+- 태그의 attribute에도 사용가능: attribute 값이 String이 아닐경우엔, 속성명={값} 형태로 전달
 
 <br>
 

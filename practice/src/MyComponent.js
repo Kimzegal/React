@@ -1,13 +1,19 @@
-function MyComponent(props) {
-  return (
-    <div>
-      Hello <b>{props.name}</b>
-    </div>
-  );
-}
+import {Component} from 'react';
+import PropTypes from 'prop-types';
 
-MyComponent.defaultProps = {
-  name: "김제갈",
-};
+class MyComponent extends Component{
+  static defaultProps = {
+    name: "김제갈"
+  };
+  static propTypes = {
+    name: PropTypes.string.isRequired
+  };
+  render() {
+    return (    <div>
+      Hello <b>{this.props.name}</b>
+      children is {this.props.children}
+    </div>);
+  }
+}
 
 export default MyComponent;
