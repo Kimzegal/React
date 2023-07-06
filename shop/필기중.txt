@@ -1,0 +1,16 @@
+SHOP
+
+Bootstrap 라이브러리
+yarn add react-bootstrap bootstrap
+npm install react-bootstrap bootstrap
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Nav, Navbar, Container} from 'react-bootstrap';
+만약 inline style로 이미지를 넣을경우, 'url()'의 괄호안에는 
+import 작명 from '경로'
+style={{backgroundImage: 'url('+bg+')}}
+(함수는 못전달함)
+
+경로를 폴더로 쓸경우엔 import 해와야하지만,
+public 폴더에 이미지 보관
+경로는 슬래시부터 시작
