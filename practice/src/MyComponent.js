@@ -10,8 +10,8 @@ class MyComponent extends Component{
   };
   render() {
     return (    <div>
-      Hello <b>{this.props.name}</b>
-      children is {this.props.children}
+      Hello <b>{thisprops.name}</b>
+      children is {props.children}
     </div>);
   }
 }

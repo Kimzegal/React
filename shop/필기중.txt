@@ -321,3 +321,24 @@ App.js에서 import 작명 from './data.js';
 
 여러변수의 경우 export {변수1, 변수2}
 import {변수1, 변수2} from './data.js'; -> 변수명 그대로 써야함
+
+
+리액트로 페이지 나누는법
+컴포넌트 만들어서 상세페이지 내용 채움
+누가 /detail 접속하면 그 컴포넌트를 보여줌
+react-router-dom 라이브러리 쓰면 가능
+yarn add react-router-dom
+index.js에 import { BrowserRouter } from "react-router-dom";
+<App />을 <BrowserRouter>로 감ㅅ쌈
+
+
+app.js
+import { Routes, Route, Link } from 'react-router-dom'
+Route 는 페이지 갯수
+ <Route path="/detail" element={<div>상세페이지임</div>} />
+path가 / 이면 메인페이지
+<Link to="/"> -->> 링크를 이용하는것
+
+useNavigate();
+페이지이동 
+인수가 1, -1이면 앞으로가기 뒤로가기
