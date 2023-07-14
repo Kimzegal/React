@@ -1,5 +1,7 @@
 import "./App.css";
 import data from "./data.js";
+import Post from "./components/Post.js";
+import Detail from "./components/Detail.js";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
@@ -44,37 +46,22 @@ function App() {
           }
         />
         <Route path="/detail" element={<div>상세페이지임</div>} />
+        <Route path="/about" element={<About />}>
+          <Route path="member" element={<div>멤12321321버요</div>} />
+          <Route path="remember" element={<div>멤버요</div>} />
+        </Route>
+        <Route path="*" element={<div>오류페이지임</div>} />
       </Routes>
     </div>
   );
 }
 
-function Post(props) {
-  console.log(props);
+function About() {
   return (
-    <>
-      <Col md={4}>
-        <img src={props.sing.img} alt="앨범 사진" width="100%" />
-        <Link to="/detail">
-          <h4>{props.sing.title}</h4>
-        </Link>
-        <p>{props.sing.singer}</p>
-      </Col>
-    </>
-  );
-}
-
-function Detail(props) {
-  return (
-    <>
-      <Col md={4}>
-        <img src={props.sing.img} alt="앨범 사진" width="100%" />
-        <Link to="/detail">
-          <h4>{props.sing.title}</h4>
-        </Link>
-        <p>{props.sing.singer}</p>
-      </Col>
-    </>
+    <div>
+      <h4>회사정보</h4>
+      <Outlet />
+    </div>
   );
 }
 

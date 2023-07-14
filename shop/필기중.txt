@@ -338,7 +338,38 @@ Route 는 페이지 갯수
  <Route path="/detail" element={<div>상세페이지임</div>} />
 path가 / 이면 메인페이지
 <Link to="/"> -->> 링크를 이용하는것
+path="*" : 외의 모든 URL
+
 
 useNavigate();
-페이지이동 
+훅중 하나
+페이지이동으로, Link대신 사용가능
+<Nav.Link
+              onClick={() => {
+                navigate("/");
+              }}
+            > 
 인수가 1, -1이면 앞으로가기 뒤로가기
+
+Nested Route
+Router 안에 넣음
+<Route path="/about" element={<About />}>
+          <Route path="member" element={<div>멤12321321버요</div>} />
+          <Route path="remember" element={<div>멤버요</div>} />
+        </Route>
+
+Nested된 Route의 요소는 부모 Route 요소 내의
+<Outlet /> 에 표시된다 (없으면 안표시됨)
+function About() {
+  return (
+    <div>
+      <h4>회사정보</h4>
+      <Outlet />
+    </div>
+  );
+}
+여러 유사한 페이지가 필요할때 사용하면 좋음
+
+URL page
+
+
