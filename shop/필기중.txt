@@ -381,6 +381,77 @@ let { id } = useParams();
 styled-component
 npm install styled-components
 import styled from "styled-components";
+  let YellowBtn = styled.button`
+    background: yellow;
+    color: black;
+    padding: 10px;
+  `;
+<YellowBtn />
+CSS 파일이 필요없고, 다른 JS파일을 오염시키지 않음(오염 방지시 컴포넌트명.module.css)
+페이지 로딩시간이 줄어듦 
+background: ${ props => props.bg };
+이런식으로 동적으로 가능하며 프로그램적인 기능도가능
+<YellowBtn bg="blue"/>
+복사가능
+let NewBtn = styled.button(YellowBtn)`
+...
+`
+단점은 JS가 많이 길어짐, import해오다보면 CSS랑 큰 차이가 없음
+, 협업시엔 좀.. ㅎ
+
+CSS없이 사용가능
+
+
+LifeCycle
+mount(장착), update(수정), unmount(제거)와 같은 생명 주기를 의미
+각 생명 주기 사이에 간섭(코드 실행) 이 가능해짐
+
+예전방식
+class Detail2 extends React.Component {
+  componentDidMount(){
+    //Detail2 컴포넌트가 로드되고나서 실행할 코드
+  }
+  componentDidUpdate(){
+    //Detail2 컴포넌트가 업데이트 되고나서 실행할 코드
+  }
+  componentWillUnmount(){
+    //Detail2 컴포넌트가 삭제되기전에 실행할 코드
+  }
+}
+
+function Detail(props) {
+  let { id } = useParams();
+  useEffect(()=>{
+    console.log("ㅎㅇ");
+  });
+
+요즘은 이런방식으로 사용하며, mount와 update때 실행
+(두번뜨는건 react.strictmode제거)
+근데 useEffect밖에 써도 똑같음(ㅋㅋ)
+사실, useEffect는 html 렌더링 이후에 동작합니다.
+따라서 어려운 연산, 서버에서 데이터 가져오기, 타이머 장착같은건 useEffect 안에
+Side Effect = 함수으 ㅣ핵심기능과 상관없는 부가기능 => 여기서 따온 이름
+
+  useEffect(() => {
+    let a = setTimeout(() => {
+      setAlert(false);
+    }, 2000);
+  }, [alert]);
+
+[]는 dependency로, (당연히 마운트는 한번됨) 내부의 state가 변할때 만 실행됨
+내부에 아무것도 안넣으면 ( [] ) 아예 마운트때만 실행됩니다요
+return ()=>{
+clearTimeout(a);
+}
+을 useEffect 내부에 넣으면 (clean up function) useEffect 시작하기 전에 실행됨 : 기존꺼 다없애줌
+기존 타이머나, 기존 데이터 요청을 제거
+clean up function은 마운트에는 x, 언마운트엔 실행
+
+
+useEffect : 재 렌더링마다
+useEffect + [] : 마운트시 1회
+useEffect + return : 언마운트시 1회
+
 
 
 번호 게시판명 익명여부 사장참여여부 사장접근여부 유저참여여부 유저접근여부 삭제가능여부 
