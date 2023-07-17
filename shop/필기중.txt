@@ -372,8 +372,15 @@ function About() {
 
 URL page
 
+<Route path="/detail:id" element={<div>상세페이지임</div>} />
+:를 쓰면 URL parameter 로 취급
+그 후 사용할 곳에서 useParams 라는 훅을 사용.
+let { id } = useParams();
+슬래시만 있다면 여러개가능 /:ㅇㄹㅇㄹ/:ㅋㄹㅋㄹ
 
-
+styled-component
+npm install styled-components
+import styled from "styled-components";
 
 
 번호 게시판명 익명여부 사장참여여부 사장접근여부 유저참여여부 유저접근여부 삭제가능여부 

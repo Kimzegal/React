@@ -39,13 +39,16 @@ function App() {
             <Container fluid>
               <Row>
                 {songs.map((a, i) => {
-                  return <Post sing={songs[i]} num={i + 1}></Post>;
+                  return <Post sing={songs[i]} num={i}></Post>;
                 })}
               </Row>
             </Container>
           }
         />
-        <Route path="/detail" element={<div>상세페이지임</div>} />
+        <Route
+          path="/detail/:id"
+          element={<Detail sing={songs}>상세페이지임</Detail>}
+        />
         <Route path="/about" element={<About />}>
           <Route path="member" element={<div>멤12321321버요</div>} />
           <Route path="remember" element={<div>멤버요</div>} />
