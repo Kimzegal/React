@@ -1,0 +1,44 @@
+프론트엔드의 역사
+프론트 엔드 : 웹 및 앱의 사용자, 인터페이스(UI), 사용자 경험(UX) 및 사용자의 눈에 보이는 웹 또는 모바일 환경으
+인터페이스를 보기 좋게 구현하는 분야
+WEB 1.0
+HTML,HTTP -> CGI,PHP -> Javascript -> CSS,flash
+1990              1994           1995        1996
+WEB 2.0
+roadmap.sh/frontend
+
+준비학습
+OS : Mac, Windows, Linux
+Browser : Chrome, Edge, Safari, Firefox
+Text Editior : VS Code, IntelliJ, Atom ...
+Terminal : Powershell, Bash, zsh ...
+
+HTML
+HTML 기본 문법, Forms and Validation
+COnventons and Best Practices(모범사례)
+Semantic HTML
+SEO Basics (검색 최적화)
+Accessibility
+Page Structure
+
+CSS
+CSS 기본문법, Styling
+Making Layouts : POsition, Display, Box Model, CSS Grid, Flex BOx
+Responsive Web Design
+Animation
+-> Architecture, Preprocessors, CSS Framework, BEM
+
+JavaScript
+문법 + Basic Constructs
+DOM Manipulation
+Fetch API / Ajax (XHR)
+ES6 + Modern JS
+TypeScript
+Framework, Static Site Generators(SSG) -> React는 Gatsby, Vue는 Gridsome, Js는 11ty
+SSR, CSR
+
+Tools : VCS : GitHub, Gitlab등.. Package Manger : npm, yarn
+Module Bundler Webpack, Parcel, Rollup 등
+
+Testing
+Jest, Cypress, React-testing-libarary, Cross Platform
